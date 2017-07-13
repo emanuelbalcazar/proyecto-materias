@@ -1,58 +1,58 @@
 <!-- Panel lateral -->
 <section layout="row" flex>
-  <md-sidenav class="md-sidenav-left" md-component-id="left"
-  md-disable-backdrop md-whiteframe="4">
-  <md-toolbar class="md-hue-2">
-    <div class="md-toolbar-tools">
-      <h2 flex md-truncate>Opciones</h2>
-      <md-button class="md-icon-button" aria-label="More" ng-click="$parent.toggleLeft()">
-        <md-tooltip md-direction="down">Cerrar</md-tooltip>
-        <md-icon class="material-icons">arrow_back</md-icon>
-      </md-button>
-    </div>
-  </md-toolbar>
-  <md-content layout-margin>
-    <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
-      <md-card-title>
-        <md-card-title-text>
-          <span class="md-headline">Nombre</span>
-          <span class="md-subhead">Administrador</span>
-        </md-card-title-text>
-        <md-card-title-media>
-          <div class="md-media-md card-media">
-            <img src="http://vvcexpl.com/wordpress/wp-content/uploads/2013/09/profile-default-male.png" alt="" height="112px" width="112px">
-          </div>
-        </md-card-title-media>
-      </md-card-title>
-      <md-card-actions layout="row" layout-align="end center">
-        <md-button>Configuracion</md-button>
-        <md-button>Cerrar Sesion</md-button>
-      </md-card-actions>
-    </md-card>
-    <div layout="column">
-      <md-divider></md-divider>
-      <md-subheader>Navegacion</md-subheader>
-      <md-divider></md-divider>
-      <md-list ng-cloak>
-        <md-list-item ng-repeat="item in menuItems" flex>
-          <md-button class="md-list-item-content" style="text-align:left;" flex>
-            <md-icon class="material-icons">{{item.icon}}</md-icon>
-            <span class="md-inline-list-icon-label">&emsp;{{ item.name }}</span>
-          </md-button>
-        </md-list-item>
-      </md-list>
-      <md-divider></md-divider>
-      <md-subheader>Configuracion</md-subheader>
-      <md-divider></md-divider>
-      <md-list ng-cloak>
-        <md-list-item flex>
-          <md-button class="md-list-item-content" style="text-align:left;" flex>
-            <md-icon class="material-icons">build</md-icon>
-            <span class="md-inline-list-icon-label">&emsp;Opciones</span>
-          </md-button>
-        </md-list-item>
-      </md-list>
-    </div>
-  </md-content>
-</md-sidenav>
+  <md-sidenav class="md-sidenav-left" md-component-id="left">
+    <md-toolbar class="md-hue-2">
+      <div class="md-toolbar-tools">
+        <h2 flex md-truncate>Opciones</h2>
+        <md-button class="md-icon-button" aria-label="More" ng-click="$parent.toggleLeft()">
+          <md-tooltip md-direction="down">Cerrar</md-tooltip>
+          <md-icon class="material-icons">clear</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-content layout-margin>
+      <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Nombre</span>
+            <span class="md-subhead">Administrador</span>
+          </md-card-title-text>
+          <md-card-title-media>
+            <div class="md-media-md card-media">
+              <img src="http://vvcexpl.com/wordpress/wp-content/uploads/2013/09/profile-default-male.png" alt="" height="112px" width="112px">
+            </div>
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button>Configuracion</md-button>
+          <md-button>Cerrar Sesion</md-button>
+        </md-card-actions>
+      </md-card>
+      <div layout="column">
+        <md-divider></md-divider>
+        <md-subheader>Navegacion</md-subheader>
+        <md-divider></md-divider>
+        <md-list ng-cloak>
+          <md-list-item ng-repeat="item in menuItems" flex>
+            <md-button class="md-list-item-content" style="text-align:left;" flex>
+              <md-icon class="material-icons">{{item.icon}}</md-icon>
+              <span class="md-inline-list-icon-label">&emsp;{{ item.name }}</span>
+            </md-button>
+          </md-list-item>
+        </md-list>
+        <md-divider></md-divider>
+        <md-subheader>Configuracion</md-subheader>
+        <md-divider></md-divider>
+        <md-list ng-cloak>
+          <md-list-item flex>
+            <md-button class="md-list-item-content" style="text-align:left;" flex>
+              <md-icon class="material-icons">settings</md-icon>
+              <span class="md-inline-list-icon-label">&emsp;Opciones</span>
+            </md-button>
+          </md-list-item>
+        </md-list>
+        <md-divider></md-divider>
+      </div>
+    </md-content>
+  </md-sidenav>
 </section>
