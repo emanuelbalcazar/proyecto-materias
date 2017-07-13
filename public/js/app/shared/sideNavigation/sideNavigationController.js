@@ -14,5 +14,11 @@
     vm.$on('toggleLeft', function(e) {
       vm.toggleNav();
     });
+
+    vm.menuItems = [
+    { name: 'Materias', icon: 'book' },
+    { name: 'Carreras', icon: 'account_balance' },
+    { name: 'Usuarios', icon: 'account_box' }
+  ];
   }
 })()

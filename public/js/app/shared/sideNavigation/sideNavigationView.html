@@ -16,7 +16,7 @@
       <md-card-title>
         <md-card-title-text>
           <span class="md-headline">Nombre</span>
-          <span class="md-subhead">Alumno</span>
+          <span class="md-subhead">Administrador</span>
         </md-card-title-text>
         <md-card-title-media>
           <div class="md-media-md card-media">
@@ -26,15 +26,32 @@
       </md-card-title>
       <md-card-actions layout="row" layout-align="end center">
         <md-button>Configuracion</md-button>
-        <md-button>Salir</md-button>
+        <md-button>Cerrar Sesion</md-button>
       </md-card-actions>
     </md-card>
     <div layout="column">
-      <md-button>Materias</md-button>
-      <md-button>Carreras</md-button>
-      <md-button>Usuarios</md-button>
-      <br />
-      <md-button>Opciones</md-button>
+      <md-divider></md-divider>
+      <md-subheader>Navegacion</md-subheader>
+      <md-divider></md-divider>
+      <md-list ng-cloak>
+        <md-list-item ng-repeat="item in menuItems" flex>
+          <md-button class="md-list-item-content" style="text-align:left;" flex>
+            <md-icon class="material-icons">{{item.icon}}</md-icon>
+            <span class="md-inline-list-icon-label">&emsp;{{ item.name }}</span>
+          </md-button>
+        </md-list-item>
+      </md-list>
+      <md-divider></md-divider>
+      <md-subheader>Configuracion</md-subheader>
+      <md-divider></md-divider>
+      <md-list ng-cloak>
+        <md-list-item flex>
+          <md-button class="md-list-item-content" style="text-align:left;" flex>
+            <md-icon class="material-icons">build</md-icon>
+            <span class="md-inline-list-icon-label">&emsp;Opciones</span>
+          </md-button>
+        </md-list-item>
+      </md-list>
     </div>
   </md-content>
 </md-sidenav>
