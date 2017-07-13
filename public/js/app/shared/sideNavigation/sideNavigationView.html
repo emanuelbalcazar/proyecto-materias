@@ -1,0 +1,41 @@
+<!-- Panel lateral -->
+<section layout="row" flex>
+  <md-sidenav class="md-sidenav-left" md-component-id="left"
+  md-disable-backdrop md-whiteframe="4">
+  <md-toolbar class="md-hue-2">
+    <div class="md-toolbar-tools">
+      <h2 flex md-truncate>Opciones</h2>
+      <md-button class="md-icon-button" aria-label="More" ng-click="$parent.toggleLeft()">
+        <md-tooltip md-direction="down">Cerrar</md-tooltip>
+        <md-icon class="material-icons">arrow_back</md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-content layout-margin>
+    <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">Nombre</span>
+          <span class="md-subhead">Alumno</span>
+        </md-card-title-text>
+        <md-card-title-media>
+          <div class="md-media-md card-media">
+            <img src="http://vvcexpl.com/wordpress/wp-content/uploads/2013/09/profile-default-male.png" alt="" height="112px" width="112px">
+          </div>
+        </md-card-title-media>
+      </md-card-title>
+      <md-card-actions layout="row" layout-align="end center">
+        <md-button>Configuracion</md-button>
+        <md-button>Salir</md-button>
+      </md-card-actions>
+    </md-card>
+    <div layout="column">
+      <md-button>Materias</md-button>
+      <md-button>Carreras</md-button>
+      <md-button>Usuarios</md-button>
+      <br />
+      <md-button>Opciones</md-button>
+    </div>
+  </md-content>
+</md-sidenav>
+</section>

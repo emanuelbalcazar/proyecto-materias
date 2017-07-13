@@ -1,0 +1,18 @@
+<!-- Definicion visual del menu emergente -->
+<div layout="row">
+  <md-fab-speed-dial md-open="isOpen" md-direction="{{selectedDirection}}" ng-class="selectedMode" class="md-scale md-fab-bottom-right" style="position: fixed;" ng-disabled="$parent.fabMenuElements.length == 0">
+    <md-fab-trigger>
+      <md-button aria-label="menu" class="md-fab md-primary md-hue-2">
+        <md-tooltip md-direction="left">Menu</md-tooltip>
+        <md-icon class="material-icons">menu</md-icon>
+      </md-button>
+    </md-fab-trigger>
+    <md-fab-actions>
+      <!-- Se usa un ciclo de repeticion para que la opciones del menu emergente sean manejadas dinamicamente -->
+      <md-button aria-label="{{element.tooltip}}" href="{{element.href}}" ng-repeat="element in $parent.fabMenuElements" class="md-fab md-raised md-mini">
+        <md-tooltip md-direction="left">{{element.tooltip}}</md-tooltip>
+        <md-icon class="material-icons">{{element.icon}}</md-icon>
+      </md-button>
+    </md-fab-actions>
+  </md-fab-speed-dial>
+</div>
