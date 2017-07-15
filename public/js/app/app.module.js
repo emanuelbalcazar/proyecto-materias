@@ -12,7 +12,9 @@
     'navigationBar',
     'fabMenu',
     'sideNavigation',
-    'routes'
+    'routes',
+    'home',
+    'subjects'
   ]).config(['$interpolateProvider', function($interpolateProvider) {
     // Se cambian los simbolos propios de angular para el binding y se pasan de {{}} a [[]].
     $interpolateProvider.startSymbol('[[');

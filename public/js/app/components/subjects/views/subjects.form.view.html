@@ -1,0 +1,75 @@
+<md-content layout-gt="row" layout-padding>
+  <form ng-cloak>
+    <md-input-container class="md-block" flex>
+      <label>Nombre</label>
+      <input ng-model="subject.name">
+    </md-input-container>
+    <div class="md-block" flex>
+      <md-autocomplete
+      md-input-minlength="2"
+      md-selected-item="subject.career"
+      md-search-text="searchCareerText"
+      md-items="item in searchCareer(searchCareerText)"
+      md-floating-label="Carrera"
+      style="margin-top: -15px;">
+      <span md-highlight-text="searchCareerText">[[item]]</span>
+    </md-autocomplete>
+  </div>
+  <p>Tipo</p>
+  <md-divider></md-divider>
+  <br />
+  <md-radio-group ng-model="subject.type">
+    <md-radio-button value="anual" class="md-primary">Anual</md-radio-button>
+    <md-radio-button value="cuatrimestral" class="md-primary">Cuatrimestral</md-radio-button>
+  </md-radio-group>
+</form>
+<p>Correlativas</p>
+<md-divider></md-divider>
+<div class="md-block" layout-gt="column">
+  <md-autocomplete
+  md-input-minlength="2"
+  md-item-text="item.name"
+  md-selected-item="selectedSubject"
+  md-search-text="searchSubjectText"
+  md-items="item in searchSubject(searchSubjectText)"
+  md-floating-label="Buscar materia..."
+  md-autoselect="true"
+  md-selected-item-change="changeSelection()"
+  flex>
+  <span md-highlight-text="searchSubjectText">[[item.name]]</span>
+</md-autocomplete>
+<md-button class="md-raised" ng-click="addCorrelativa(selectedSubject)" ng-disabled="!isSelected" aria-label="Guardar">Agregar
+</md-button>
+</div>
+<md-divider></md-divider>
+<md-list id="listado-correlativas">
+  <md-list-item class="md-3-line" ng-repeat="item in subject.correlativas">
+    <div class="md-list-item-text">
+      <h3>[[item.name]]</h3>
+      <p>[[item.career]]</p>
+    </div>
+    <md-button class="md-icon-button md-secondary" aria-label="Delete" ng-click="removeCorrelativa($index)">
+      <md-tooltip md-direction="down">Borrar</md-tooltip>
+      <md-icon class="material-icons">delete</md-icon>
+    </md-button>
+    <md-divider ng-if="!$last"></md-divider>
+  </md-list-item>
+</md-list>
+<div layout-align="center center" layout="column" ng-if="subject.correlativas.length == 0">
+  <p>No se registran correlativas.</p>
+</div>
+<md-divider></md-divider>
+<section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+  <md-button class="md-raised md-primary">Guardar</md-button>
+  <md-button class="md-raised">Cancelar</md-button>
+</section>
+<!-- Seccion de control unicamente, no presente en la version final -->
+<div>
+  <p>Datos obtenidos (unicamente para control, despues de quita):</p>
+  <p>Nombre: [[subject.name]]</p>
+  <p>Carrera: [[subject.career]]</p>
+  <p>Tipo: [[subject.type]]</p>
+  <p>Correlativas: </p>
+  <p ng-repeat="correlativa in subject.correlativas">[['- '+correlativa.name]]</p>
+</div>
+</md-content>

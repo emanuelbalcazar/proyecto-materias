@@ -37,14 +37,25 @@
   <!-- Controlador compartido -->
   <script src="{{ URL::asset('js/app/app.shared.controller.js') }}"></script>
   <!-- Barra de navegacion -->
-  <script src="{{ URL::asset('js/app/shared/navigationBar/navigationBarComponent.js') }}"></script>
-  <script src="{{ URL::asset('js/app/shared/navigationBar/navigationBarController.js') }}"></script>
+  <script src="{{ URL::asset('js/app/shared/navigationBar/navigationBar.component.js') }}"></script>
+  <script src="{{ URL::asset('js/app/shared/navigationBar/navigationBar.controller.js') }}"></script>
   <!-- Menu emergente -->
-  <script src="{{ URL::asset('js/app/shared/fabMenu/fabMenuComponent.js') }}"></script>
-  <script src="{{ URL::asset('js/app/shared/fabMenu/fabMenuController.js') }}"></script>
+  <script src="{{ URL::asset('js/app/shared/fabMenu/fabMenu.component.js') }}"></script>
+  <script src="{{ URL::asset('js/app/shared/fabMenu/fabMenu.controller.js') }}"></script>
   <!-- Panel lateral de navegacion -->
-  <script src="{{ URL::asset('js/app/shared/sideNavigation/sideNavigationComponent.js') }}"></script>
-  <script src="{{ URL::asset('js/app/shared/sideNavigation/sideNavigationController.js') }}"></script>
+  <script src="{{ URL::asset('js/app/shared/sideNavigation/sideNavigation.component.js') }}"></script>
+  <script src="{{ URL::asset('js/app/shared/sideNavigation/sideNavigation.controller.js') }}"></script>
+  <!-- Home -->
+  <script src="{{ URL::asset('js/app/components/home/home.module.js') }}"></script>
+  <script src="{{ URL::asset('js/app/components/home/controllers/home.controller.js') }}"></script>
+  <script src="{{ URL::asset('js/app/components/home/routes/home.routes.js') }}"></script>
+  <script src="{{ URL::asset('js/app/components/home/routes/home.routes.constants.js') }}"></script>
+  <!-- Materias -->
+  <script src="{{ URL::asset('js/app/components/subjects/subjects.module.js') }}"></script>
+  <script src="{{ URL::asset('js/app/components/subjects/controllers/subjects.list.controller.js') }}"></script>
+  <script src="{{ URL::asset('js/app/components/subjects/controllers/subjects.form.controller.js') }}"></script>
+  <script src="{{ URL::asset('js/app/components/subjects/routes/subjects.routes.js') }}"></script>
+  <script src="{{ URL::asset('js/app/components/subjects/routes/subjects.routes.constants.js') }}"></script>
 
 </head>
 <body>

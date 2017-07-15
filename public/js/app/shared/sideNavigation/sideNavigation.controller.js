@@ -16,9 +16,10 @@
     });
 
     vm.menuItems = [
-    { name: 'Materias', icon: 'book' },
-    { name: 'Carreras', icon: 'account_balance' },
-    { name: 'Usuarios', icon: 'account_box' }
+    { name: 'Inicio', icon: 'home', href: '#/home'},
+    { name: 'Materias', icon: 'book', href: '#/subjects'},
+    { name: 'Carreras', icon: 'account_balance', href: '' },
+    { name: 'Usuarios', icon: 'account_box', href: '' }
   ];
   }
 })()

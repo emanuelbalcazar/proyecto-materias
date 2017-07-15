@@ -1,7 +1,7 @@
-/* Ruteo general de la aplicacion */
 (function () {
++
   'use strict';
-  angular.module('routes')
+  angular.module('home')
   .config(Routing, ['$routeProvider', '$locationProvider', '$windowProvider', 'path', Routing]);
 
   function Routing($routeProvider, $locationProvider, $windowProvider, path) {
@@ -13,12 +13,13 @@
     function routing(){
       $locationProvider.hashPrefix('');
       $routeProvider
-      .when('/404', {
-        templateUrl: base_route + path.ERROR_VIEW
+      .when('/home', {
+        templateUrl: base_route + path.HOME_VIEW,
+        controller: 'homeController'
       })
-      .otherwise({
-        redirectTo: '/404'
-      });
+      .when('/', {
+        redirectTo: '/home'
+      })
     }
   }
 

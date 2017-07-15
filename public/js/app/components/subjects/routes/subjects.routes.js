@@ -1,7 +1,7 @@
 /* Ruteo general de la aplicacion */
 (function () {
   'use strict';
-  angular.module('routes')
+  angular.module('subjects')
   .config(Routing, ['$routeProvider', '$locationProvider', '$windowProvider', 'path', Routing]);
 
   function Routing($routeProvider, $locationProvider, $windowProvider, path) {
@@ -13,12 +13,14 @@
     function routing(){
       $locationProvider.hashPrefix('');
       $routeProvider
-      .when('/404', {
-        templateUrl: base_route + path.ERROR_VIEW
+      .when('/subjects', {
+        templateUrl: base_route + path.LIST_VIEW,
+        controller: 'subjectsListController'
       })
-      .otherwise({
-        redirectTo: '/404'
-      });
+      .when('/subject/new', {
+        templateUrl: base_route + path.FORM_VIEW,
+        controller: 'subjectsFormController'
+      })
     }
   }
 

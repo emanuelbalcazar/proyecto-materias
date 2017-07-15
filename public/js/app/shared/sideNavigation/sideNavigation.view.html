@@ -2,41 +2,37 @@
 <section layout="row" flex>
   <md-sidenav class="md-sidenav-left" md-component-id="left">
     <md-toolbar class="md-hue-2">
-      <div class="md-toolbar-tools">
-        <h2 flex md-truncate>Opciones</h2>
-        <md-button class="md-icon-button" aria-label="More" ng-click="$parent.toggleLeft()">
-          <md-tooltip md-direction="down">Cerrar</md-tooltip>
-          <md-icon class="material-icons">clear</md-icon>
-        </md-button>
+      <div layout="column">
+        <div layout="row">
+          <md-list>
+            <md-list-item class="md-3-line">
+              <div leyout="column" layout-align="center center">
+                <!-- <img ng-src="http://vvcexpl.com/wordpress/wp-content/uploads/2013/09/profile-default-male.png" class="md-avatar" style="width: 112px; height: 112px;" /> -->
+                <img ng-src="http://i.imgur.com/HQ3YU7n.gif" class="md-avatar" style="width: 100px; height: 100px;" />
+              </div>
+            </md-list-item>
+          </md-list>
+          <div layout="column" layout-align="center center" flex>
+            <span class="md-headline">Nombre</span>
+            <span class="md-subhead">Administrador</span>
+          </div>
+        </div>
+        <div layout="row" layout-align="center center">
+          <md-button>Configuracion</md-button>
+          <md-button>Cerrar Sesion</md-button>
+        </div>
       </div>
     </md-toolbar>
     <md-content layout-margin>
-      <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
-        <md-card-title>
-          <md-card-title-text>
-            <span class="md-headline">Nombre</span>
-            <span class="md-subhead">Administrador</span>
-          </md-card-title-text>
-          <md-card-title-media>
-            <div class="md-media-md card-media">
-              <img src="http://vvcexpl.com/wordpress/wp-content/uploads/2013/09/profile-default-male.png" alt="" height="112px" width="112px">
-            </div>
-          </md-card-title-media>
-        </md-card-title>
-        <md-card-actions layout="row" layout-align="end center">
-          <md-button>Configuracion</md-button>
-          <md-button>Cerrar Sesion</md-button>
-        </md-card-actions>
-      </md-card>
       <div layout="column">
         <md-divider></md-divider>
         <md-subheader>Navegacion</md-subheader>
         <md-divider></md-divider>
         <md-list ng-cloak>
           <md-list-item ng-repeat="item in menuItems" flex>
-            <md-button class="md-list-item-content" style="text-align:left;" flex>
-              <md-icon class="material-icons">{{item.icon}}</md-icon>
-              <span class="md-inline-list-icon-label">&emsp;{{ item.name }}</span>
+            <md-button class="md-list-item-content" style="text-align:left;" href="[[item.href]]" flex>
+              <md-icon class="material-icons">[[item.icon]]</md-icon>
+              <span class="md-inline-list-icon-label">&emsp;[[item.name]]</span>
             </md-button>
           </md-list-item>
         </md-list>
