@@ -1,2 +1,3 @@
-name;surname;age;email;password;biography
-Carlos Emanuel;Balcazar;23;emanuelbalcazar@gmail.com;12345678;ninguna
+name;surname;age;email;password;biography;account_active
+Carlos Emanuel;Balcazar;23;emanuelbalcazar13@gmail.com;123456;ninguna por ahora;1
+Lucas;Abella;23;lucas.gabriel2993@gmail.com;123456;;1

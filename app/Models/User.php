@@ -10,8 +10,15 @@ use DB;
  */
 class User extends GenericModel
 {
-    // override table name
     protected $table = 'users';
 
+    /**
+    * Defino la cardinalidad en la base de datos, usuarios tiene vinculacion a
+    * una tabla intermedia 'roles de usuario'.
+    */
+    public function roles()
+    {
+        return $this->belongsToMany('App\Models\Role', 'role_user', 'user_id', 'role_id');
+    }
 
 }
