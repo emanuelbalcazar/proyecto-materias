@@ -12,7 +12,7 @@ IF007;Bases de Datos 1;135;cuatrimestral;2;2;1;1
 MA006;Estadistica;90;cuatrimestral;2;2;0;1
 IF008;Programacion Orientada a Objetos;120;cuatrimestral;2;2;1;1
 IF009;Laboratorio de Programacion y Lenguajes;90;cuatrimestral;1;3;0;1
-IF010;Analisis y Diseño de Sistemas;135;cuatrimestral;1;3;1;1
+IF010;Analisis y Diseno de Sistemas;135;cuatrimestral;1;3;1;1
 IF011;Sistemas Operativos;150;cuatrimestral;1;3;1;1
 IF012;Desarrollo de Software;135;cuatrimestral;2;3;0;1
 IF013;Fundamentos Teoricos de la Informatica;120;cuatrimestral;2;3;1;1
@@ -26,7 +26,7 @@ IF022;Sistemas Distribuidos;120;cuatrimestral;2;4;0;1
 IF021;Arquitectura de Redes y Servicios;120;cuatrimestral;1;5;0;1
 IF017;Taller de Nuevas Tecnologias;90;cuatrimestral;1;5;0;1
 IF025;Sistemas Embebidos y de Tiempo Real;120;cuatrimestral;2;5;0;1
-FA007;Ingles;;anual;;1;0;1
-IF026;Tesina;200;anual;;5;0;0
+FA007;Ingles;0;anual;0;1;0;1
+IF026;Tesina;200;anual;0;5;0;0
 FA102;Estrategia Comunicacionales;20;cuatrimestral;2;4;0;0
 FA103;Relaciones Humanas;20;cuatrimestral;2;4;0;0

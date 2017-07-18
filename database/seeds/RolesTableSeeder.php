@@ -3,11 +3,10 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Log;
 use App\Services\Utils\Files;
-use App\Models\User;
+use App\Models\Role;
 
-class UserTableSeeder extends Seeder
+class RolesTableSeeder extends Seeder
 {
-
     /**
      * Run the database seeds.
      *
@@ -16,9 +15,9 @@ class UserTableSeeder extends Seeder
     public function run()
     {
         $loader = new Files();
-        $loader->setFileName('users.csv');
-        $loader->setModel(new User);
+        $loader->setFileName('roles.csv');
+        $loader->setModel(new Role);
         $loader->load();
-        Log::info('UserTableSeeder', ['La carga de archivos de Usuarios se realizo correctamente']);
+        Log::info('RolesTableSeeder', ['La carga de archivos de Roles se realizo correctamente']);
     }
 }

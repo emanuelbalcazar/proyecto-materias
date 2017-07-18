@@ -41,6 +41,28 @@ $app->singleton(
     App\Exceptions\Handler::class
 );
 
+/**
+ * Configuracion de los registros de LOG.
+ * Se definen archivos separados para mantener los logs del sistema clasificados por niveles.
+ * El ideal de uso seria: Log::info('class name', ['message']);
+ * @var $monolog - herramienta utilizada por Laravel que permite utilizar logs en el sistema.
+ */
+$app->configureMonologUsing(function($monolog) {
+    $bubble = false;
+
+    $infoStreamHandler = new Monolog\Handler\StreamHandler(storage_path("/logs/info.log"), Monolog\Logger::INFO, $bubble);
+    $monolog->pushHandler($infoStreamHandler);
+
+    $warningStreamHandler = new Monolog\Handler\StreamHandler(storage_path("/logs/warning.log"), Monolog\Logger::WARNING, $bubble);
+    $monolog->pushHandler($warningStreamHandler);
+
+    $errorStreamHandler = new Monolog\Handler\StreamHandler(storage_path("/logs/error.log"), Monolog\Logger::ERROR, $bubble);
+    $monolog->pushHandler($errorStreamHandler);
+
+    // $debugStreamHandler = new Monolog\Handler\StreamHandler(storage_path("/logs/debug.log"), Monolog\Logger::DEBUG, $bubble);
+    // $monolog->pushHandler($debugStreamHandler);
+});
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application

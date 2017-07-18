@@ -3,11 +3,10 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Log;
 use App\Services\Utils\Files;
-use App\Models\User;
+use App\Models\Career;
 
-class UserTableSeeder extends Seeder
+class CareersTableSeeder extends Seeder
 {
-
     /**
      * Run the database seeds.
      *
@@ -16,9 +15,9 @@ class UserTableSeeder extends Seeder
     public function run()
     {
         $loader = new Files();
-        $loader->setFileName('users.csv');
-        $loader->setModel(new User);
+        $loader->setFileName('careers.csv');
+        $loader->setModel(new Career);
         $loader->load();
-        Log::info('UserTableSeeder', ['La carga de archivos de Usuarios se realizo correctamente']);
+        Log::info('CareersTableSeeder', ['La carga de archivos de Carreras se realizo correctamente']);
     }
 }

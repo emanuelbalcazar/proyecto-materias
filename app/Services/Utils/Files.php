@@ -50,7 +50,9 @@ class Files
     public function load()
     {
         foreach ($this->data as $row) {
-            $this->model::create($row);
+            if (!$this->model->exists($row)) {
+                $this->model::create($row);
+            }
         }
     }
 }

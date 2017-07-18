@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -30,6 +31,18 @@ abstract class GenericModel extends Model
     public function getTable()
     {
         return $this->table;
+    }
+
+    /**
+     * Verifica si existen registros en la base de datos que cumplan con la
+     * condicion recibida como parametro en la funcion.
+     * @param  [Array] $where condiciones de busqueda del registro en forma de clausula WHERE.
+     * @return [Boolean] TRUE si se encontraron registro, FALSE en caso contrario.
+     */
+    public function exists($where)
+    {
+        $data = DB::table($this->table)->where($where)->count();
+        return ($data > 0);
     }
 
 }
