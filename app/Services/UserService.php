@@ -20,4 +20,13 @@ class UserService extends GenericServiceImple
         return new User;
     }
 
+    /**
+     * Retorna todos los usuarios registrados.
+     * @return [Array] usuarios
+     */
+    public function all()
+    {
+        return User::all();
+    }
+
 }
