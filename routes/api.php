@@ -18,3 +18,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('users', 'UserController@index');    // retorna todos los usuarios.
+
+Route::get('subjects', 'SubjectController@index');    // retorna todas las materias.
