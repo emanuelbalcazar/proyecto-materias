@@ -3,7 +3,7 @@
   angular.module('navigationBar', [])
   // Se define el componente de la barra de navegacion.
   .component('navigation', {
-    templateUrl: 'js/app/shared/navigationbar/navigationBar.view.html',
+    templateUrl: 'js/app/shared/navigationBar/navigationBar.view.html',
     controller: 'NavController'
   })
 })()
