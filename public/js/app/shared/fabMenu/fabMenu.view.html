@@ -2,7 +2,7 @@
 <div layout="row">
   <md-fab-speed-dial md-open="isOpen" md-direction="{{selectedDirection}}" ng-class="selectedMode" class="md-scale md-fab-bottom-right" style="position: fixed;" ng-disabled="$parent.fabMenuElements.length == 0">
     <md-fab-trigger>
-      <md-button aria-label="menu" class="md-fab md-primary md-hue-2">
+      <md-button aria-label="menu" class="md-fab md-primary md-hue-2" ng-disabled="$parent.fabMenuElements.length == 0">
         <md-tooltip md-direction="left">Menu</md-tooltip>
         <md-icon class="material-icons">menu</md-icon>
       </md-button>

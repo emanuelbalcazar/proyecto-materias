@@ -7,6 +7,8 @@
     'ngMessages',
     'ngAria',
     'ngRoute',
+    'ngAnimate',
+    'ngSanitize',
 
     // Modulos propios.
     'navigationBar',
@@ -20,9 +22,13 @@
     $interpolateProvider.startSymbol('[[');
     $interpolateProvider.endSymbol(']]');
   }]).run(['$rootScope',
-  // Se establece el titulo que llevara la pagina en el navegador.
-  function($rootScope) {
-    $rootScope.title = "Materias";
-  }
-])
+    // Se establece el titulo que llevara la pagina en el navegador.
+    function($rootScope) {
+      $rootScope.title = "Materias";
+    }
+  ]).config(function($mdThemingProvider) {
+    $mdThemingProvider.theme('default')
+      .primaryPalette('blue',{'default': '800'})
+      .warnPalette('red');
+});
 })()

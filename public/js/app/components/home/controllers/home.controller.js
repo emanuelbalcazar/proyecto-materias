@@ -13,4 +13,4 @@
     vm.fabMenu = [];
     vm.$parent.setFabMenuElements(vm.fabMenu);
   }
-})() 
+})()

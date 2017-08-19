@@ -54,6 +54,7 @@
   <script src="{{ URL::asset('js/app/components/subjects/subjects.module.js') }}"></script>
   <script src="{{ URL::asset('js/app/components/subjects/controllers/subjects.list.controller.js') }}"></script>
   <script src="{{ URL::asset('js/app/components/subjects/controllers/subjects.form.controller.js') }}"></script>
+  <script src="{{ URL::asset('js/app/components/subjects/controllers/subjects.service.js') }}"></script>
   <script src="{{ URL::asset('js/app/components/subjects/routes/subjects.routes.js') }}"></script>
   <script src="{{ URL::asset('js/app/components/subjects/routes/subjects.routes.constants.js') }}"></script>
 

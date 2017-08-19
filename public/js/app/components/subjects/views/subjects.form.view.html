@@ -1,9 +1,25 @@
 <md-content layout-gt="row" layout-padding>
-  <form ng-cloak>
+  <form name="subjectForm" ng-cloak>
+    <p><strong>Basico</strong></p>
     <div layout="row">
       <md-input-container class="md-block" flex>
         <label>Nombre</label>
-        <input ng-model="subject.name">
+        <input ng-model="subject.name" name="subjectName" minlength="1" maxlength="100" md-maxlength="100" required>
+        <div ng-messages="subjectForm.subjectName.$error" multiple>
+          <div ng-message="required">
+            Debe especificar un nombre para la materia.
+          </div>
+        </div>
+      </md-input-container>
+      <md-input-container class="md-block" flex>
+        <label>Codigo</label>
+        <input ng-model="subject.code">
+      </md-input-container>
+    </div>
+    <div layout="row">
+      <md-input-container class="md-block" flex>
+        <label>Cantidad de horas</label>
+        <input type="number" ng-model="subject.total_hours" min="0" max="1000">
       </md-input-container>
       <div class="md-block" flex>
         <md-autocomplete
@@ -16,27 +32,57 @@
         </md-autocomplete>
       </div>
     </div>
-    <p>Tipo</p>
     <md-divider></md-divider>
-    <br />
-    <md-radio-group ng-model="subject.type">
-      <md-radio-button value="anual" class="md-primary">Anual</md-radio-button>
-      <md-radio-button value="cuatrimestral" class="md-primary">Cuatrimestral</md-radio-button>
-    </md-radio-group>
-  </form>
-  <p>Correlativas</p>
-  <md-divider></md-divider>
-  <div class="md-block" layout-gt="column">
-    <md-autocomplete
-        md-input-minlength="2"
-        md-item-text="item.name"
-        md-selected-item="selectedSubject"
-        md-search-text="searchSubjectText"
-        md-items="item in searchSubject(searchSubjectText)"
-        md-floating-label="Buscar materia..."
-        md-autoselect="true"
-        md-selected-item-change="changeSelection()"
-        flex>
+    <p><strong>Periodo</strong></p>
+    <div layout="row">
+      <md-input-container class="md-block" flex>
+        <md-radio-group ng-model="subject.period">
+          <md-radio-button value="anual" class="md-primary">Anual</md-radio-button>
+          <md-radio-button value="cuatrimestral" class="md-primary">Cuatrimestral</md-radio-button>
+        </md-radio-group>
+      </md-input-container>
+    </div>
+    <div layout="row">
+      <md-input-container class="md-block" flex="80">
+        <label>Cuatrimestre</label>
+        <md-select name="type" ng-model="subject.quarter">
+          <md-option value="0">Ninguno</md-option>
+          <md-option value="1">Primer cuatrimestre</md-option>
+          <md-option value="2">Segundo cuatrimestre</md-option>
+        </md-select>
+      </md-input-container>
+      <md-input-container class="md-block" flex="20">
+        <label>Año</label>
+        <input type="number" ng-model="subject.year" min="1" max="20">
+      </md-input-container>
+    </div>
+    <md-divider></md-divider>
+    <p><strong>Condiciones de aprobacion</strong></p>
+    <div layout="column">
+      <md-input-container class="md-block" flex>
+        <md-switch class="md-primary" name="special" ng-model="subject.promotion">
+         [[subject.promotion ? 'Tiene promocion' : 'No tiene promocion']]
+       </md-switch>
+      </md-input-container>
+      <md-input-container class="md-block" flex>
+        <md-switch class="md-primary" name="special" ng-model="subject.final">
+         [[subject.final ? 'Tiene final' : 'No tiene final']]
+       </md-switch>
+      </md-input-container>
+    </div>
+    <md-divider></md-divider>
+    <p><strong>Correlativas</strong></p>
+    <div layout-gt="column">
+      <md-autocomplete
+      md-input-minlength="2"
+      md-item-text="item.name"
+      md-selected-item="selectedSubject"
+      md-search-text="searchSubjectText"
+      md-items="item in searchSubject(searchSubjectText)"
+      md-floating-label="Buscar materia..."
+      md-autoselect="true"
+      md-selected-item-change="changeSelection()"
+      flex>
       <span md-highlight-text="searchSubjectText">[[item.name]]</span>
     </md-autocomplete>
     <md-button class="md-raised" ng-click="addCorrelativa(selectedSubject)" ng-disabled="!isSelected" aria-label="Guardar">Agregar
@@ -61,16 +107,23 @@
   </div>
   <md-divider></md-divider>
   <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-    <md-button class="md-raised md-primary">Guardar</md-button>
+    <md-button class="md-raised md-primary" type="submit">Guardar</md-button>
     <md-button class="md-raised" ng-click="cancel()">Cancelar</md-button>
   </section>
+  </form>
   <!-- Seccion de control unicamente, no presente en la version final -->
   <div>
     <p>Datos obtenidos (unicamente para control, despues de quita):</p>
+    <p>Codigo: [[subject.code]]</p>
     <p>Nombre: [[subject.name]]</p>
     <p>Carrera: [[subject.career]]</p>
-    <p>Tipo: [[subject.type]]</p>
-    <p>Correlativas: </p>
+    <p>Cantidad de horas: [[subject.total_hours]]</p>
+    <p>Periodo: [[subject.period]]</p>
+    <p>Cuatrimestre: [[subject.quarter]]</p>
+    <p>Año: [[subject.year]]</p>
+    <p>Promocion: [[subject.promotion]]</p>
+    <p>Final: [[subject.final]]</p>
+    <p>Correlativas: [[subject.correlativas.length == 0 ? 'No tiene' : '']]</p>
     <p ng-repeat="correlativa in subject.correlativas">[['- '+correlativa.name]]</p>
   </div>
 </md-content>

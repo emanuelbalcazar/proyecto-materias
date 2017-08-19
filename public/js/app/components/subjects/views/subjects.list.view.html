@@ -1,21 +1,21 @@
 <md-content>
   <md-list>
-    <md-list-item class="md-3-line" ng-repeat="item in materias">
+    <md-list-item class="md-3-line" ng-repeat="item in subjects">
       <div class="md-list-item-text">
         <h3>[[item.name]]</h3>
-        <p>[[item.career]]</p>
+        <p>[[item.code]]</p>
       </div>
       <md-button class="md-icon-button md-secondary md-primary" aria-label="Delete">
         <md-tooltip md-direction="down">Editar</md-tooltip>
         <md-icon class="material-icons">mode_edit</md-icon>
       </md-button>
-      <md-button class="md-icon-button md-secondary" aria-label="Delete" ng-click="confirmDelete()">
+      <md-button class="md-icon-button md-secondary md-warn" aria-label="Delete" ng-click="confirmDelete()">
         <md-tooltip md-direction="down">Borrar</md-tooltip>
         <md-icon class="material-icons">delete</md-icon>
       </md-button>
       <md-divider></md-divider>
     </md-list-item>
-    <div layout-align="center center" layout="column" ng-if="materias.length == 0">
+    <div layout-align="center center" layout="column" ng-if="subjects.length == 0">
       <p>No se registran materias.</p>
     </div>
   </md-list>

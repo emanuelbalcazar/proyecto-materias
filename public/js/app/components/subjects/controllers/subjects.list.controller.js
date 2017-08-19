@@ -5,10 +5,11 @@
   .controller('subjectsListController', [
     '$scope',
     '$mdDialog',
+    'SubjectsService',
     SubjectsListController
   ]);
 
-  function SubjectsListController(vm, $mdDialog) {
+  function SubjectsListController(vm, $mdDialog, service) {
     vm.$parent.setTitle('Materias');
 
     vm.fabMenu = [
@@ -17,6 +18,17 @@
 
     vm.$parent.setFabMenuElements(vm.fabMenu);
 
+    vm.findAll = function(){
+      service.findAll(function(err, res){
+        if(err){
+          return alert('Ocurrió un error buscando las carpetas: ' + err)
+        }
+        vm.subjects = res;
+      });
+    }
+
+    vm.findAll();
+    vm.subjects = [];
 
     vm.materias = [
       {name: 'Expresion de Problemas y Algoritmos', career: 'Licenciatura en Informatica'},

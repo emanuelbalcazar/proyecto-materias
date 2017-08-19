@@ -4,16 +4,25 @@
   angular.module('subjects')
   .controller('subjectsFormController', [
     '$scope',
+    'SubjectsService',
     SubjectsFormController
   ]);
 
-  function SubjectsFormController(vm) {
+  function SubjectsFormController(vm, service) {
     vm.$parent.setTitle('Nueva materia');
     vm.$parent.setFabMenuElements([]);
+
+    // Datos: code, name, total_hours, period, quarter, year, promotion, final
     vm.subject = {
+      code : '',
       name : '',
+      total_hours : 0,
       career : '',
-      type : 'anual',
+      period : 'anual',
+      quarter : 0,
+      year : 1,
+      promotion : false,
+      final : false,
       correlativas: []
     }
 
